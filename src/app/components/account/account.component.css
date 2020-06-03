@@ -210,3 +210,7 @@
 .menu-page-content::-webkit-scrollbar {
   display: none;
 }
+
+::ng-deep .test {
+  white-space: pre-line;
+}

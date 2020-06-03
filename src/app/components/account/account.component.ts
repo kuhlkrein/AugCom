@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {GeticonService} from "../../services/geticon.service";
 import {Ng2ImgMaxService} from "ng2-img-max";
 import {IndexeddbaccessService} from "../../services/indexeddbaccess.service";
+import {UsertoolbarService} from "../../services/usertoolbar.service";
 
 @Component({
   selector: 'app-account',
@@ -24,7 +25,7 @@ export class AccountComponent implements OnInit {
   selectedMenu = 'Informations complémentaires';
   selectedSubMenu = 'Contacts';
 
-  constructor(public getIconService: GeticonService, public indexeddbaccessService: IndexeddbaccessService) {
+  constructor(public userToolBarService: UsertoolbarService ,public getIconService: GeticonService, public indexeddbaccessService: IndexeddbaccessService) {
   }
 
   ngOnInit() {
@@ -76,6 +77,17 @@ export class AccountComponent implements OnInit {
    */
   getIcon(s: string) {
     return this.getIconService.getIconUrl(s);
+  }
+
+  toolTipOf(menus){
+    let temp = 'Ouvre le menu "' + menus[0] + '"';
+    if(menus[1].length > 0 ) {
+      temp = temp  + ' contenant:';
+      menus[1].forEach(subMenu => {
+        temp = temp + '\n -' + subMenu;
+      });
+    }
+    return temp;
   }
 
 }

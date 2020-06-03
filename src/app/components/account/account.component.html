@@ -16,7 +16,10 @@
             <div>
               <div class="menu-item-title-container"
                    [class.selected]="selectedMenu===menus[0]"
-                   (click)="this.selectMenu(menus[0])">
+                   (click)="this.selectMenu(menus[0])"
+                   matTooltip="{{this.toolTipOf(menus)}}"
+                   matTooltipClass="test"
+                   [matTooltipDisabled]="!this.userToolBarService.help">
                 <div>
                   {{menus[0]}}
                 </div>
