@@ -30,7 +30,9 @@
                     <div class="sub-menu-item-title-container centerText"
                          [class.closed]="!(selectedMenu===menus[0])"
                          [class.selected]="selectedSubMenu===submenu && selectedMenu===menus[0]"
-                         (click)="this.selectSubMenu(menus[0],submenu)">
+                         (click)="this.selectSubMenu(menus[0],submenu)"
+                         matTooltip="{{submenu}}"
+                         [matTooltipDisabled]="!this.userToolBarService.help">
                       <div>
                         {{submenu}}
                       </div>
