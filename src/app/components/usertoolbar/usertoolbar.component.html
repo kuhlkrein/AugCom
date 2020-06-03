@@ -12,33 +12,43 @@
 
   <nav>
     <a routerLink="/account">
-      <div class="button floatRight" id="accountButton">
+      <div class="button floatRight" id="accountButton"
+           matTooltip="Accès aux paramètres du compte"
+           [matTooltipDisabled]="!this.userToolBarService.help">
         <div class="image width-100" [ngStyle]="{'background-image':this.getIcon('account')}">
         </div>
       </div>
     </a>
   </nav>
 
-  <div class="button floatRight" id="lockUnlockButton" (click)="this.setLock()">
+  <div class="button floatRight" id="lockUnlockButton" (click)="this.setLock()"
+       matTooltip="Vérouille ou dévérouille les options du menu"
+       [matTooltipDisabled]="!this.userToolBarService.help">
     <div class="image width-100" [class.imageSelected]="this.userToolBarService.unlock"
          [ngStyle]="{'background-image':this.getIcon(this.userToolBarService.unlock?'unlock':'lock')}">
     </div>
   </div>
 
 
-  <div class="button floatRight" id="editButton" *ngIf="this.userToolBarService.unlock" (click)="this.edit()">
+  <div class="button floatRight" id="editButton" *ngIf="this.userToolBarService.unlock" (click)="this.edit()"
+       matTooltip="Active ou désactive le menu d'édition"
+       [matTooltipDisabled]="!this.userToolBarService.help">
     <div class="image width-100" [class.noConnection]="!this.userToolBarService.isConnected"
          [class.imageSelected]="this.userToolBarService.edit" [ngStyle]="{'background-image':this.getIcon('edit')}">
     </div>
   </div>
 
   <div class="button floatRight" id="babbleButton" *ngIf="this.userToolBarService.unlock"
+       matTooltip="Affiche ou cache les items cachés"
+       [matTooltipDisabled]="!this.userToolBarService.help"
        (click)="this.userToolBarService.babble = !this.userToolBarService.babble">
     <div class="image width-100" [ngStyle]="{'background-image':this.getIcon(this.userToolBarService.babble?'hide':'show')}">
     </div>
   </div>
 
   <div class="button floatRight" id="fullScreenButton" *ngIf="this.userToolBarService.unlock"
+       matTooltip="Active ou désactive le fond d'écran"
+       [matTooltipDisabled]="!this.userToolBarService.help"
        (click)="this.userToolBarService.fullScreen()">
     <div class="image width-100"
          [ngStyle]="{'background-image':this.getIcon(this.userToolBarService.full?'exitfullscreen':'fullscreen')}">
@@ -46,8 +56,10 @@
   </div>
 
   <div class="button floatRight" id="questionHelpButton" *ngIf="this.userToolBarService.unlock"
-       (click)="this.userToolBarService.fullScreen()">
-    <div class="image width-100"
+       matTooltip="Active ou désactive l'aide"
+       [matTooltipDisabled]="!this.userToolBarService.help"
+       (click)="this.userToolBarService.help = !this.userToolBarService.help">
+    <div class="image width-100" [class.helpActivated]="this.userToolBarService.help"
          [ngStyle]="{'background-image':this.getIcon('question')}">
     </div>
   </div>
@@ -62,7 +74,9 @@
   </div>
 
   <div class="buttonLeftLeft floatLeft" [class.buttonLeftLeftBig]="this.userToolBarService.search"
-       *ngIf="this.userToolBarService.unlock">
+       *ngIf="this.userToolBarService.unlock"
+       matTooltip="Barre de recherche des items"
+       [matTooltipDisabled]="!this.userToolBarService.help">
     <div class="image width-100" [ngStyle]="{'background-image': this.userToolBarService.search? '' : this.getIcon('search') }">
       <input #searchedText type="text" [(ngModel)]="this.searchText"
              (input)="this.searchService.searchFor(searchedText.value)" class="searchBar"

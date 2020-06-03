@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ConnectionService} from 'ng-connection-service';
+import {FormControl} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,7 @@ export class UsertoolbarService {
 
   public account = false;
   public unlock = false;
+  public help = false;
   public share = false;
   public edit = false;
   public babble = false;
@@ -33,6 +35,8 @@ export class UsertoolbarService {
   public setting = false;
   public search = false;
   public popup = false;
+
+  public position = new FormControl('left');
 
   public title = 'Title';
 

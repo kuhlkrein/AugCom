@@ -32,19 +32,25 @@
   </div>
 
   <!-- the button used to play the sound of the sentence entered by the user -->
-  <div class="button floatLeft" (click)="this.historicService.playHistoric()">
+  <div class="button floatLeft" (click)="this.historicService.playHistoric()"
+       matTooltip="Joue le son de la phrase entrée dans la barre"
+       [matTooltipDisabled]="!this.userToolBarService.help">
     <div class="image haveBackgroundImage" [ngStyle]="{'background-image':this.getIcon('play')}">
     </div>
   </div>
 
   <!-- the button used in order to remove the last element entered by the user -->
-  <div class="button floatLeft" (click)="this.historicService.backHistoric()">
+  <div class="button floatLeft" (click)="this.historicService.backHistoric()"
+       matTooltip="Efface le dernier élément entré dans la barre"
+       [matTooltipDisabled]="!this.userToolBarService.help">
     <div class="image haveBackgroundImage" [ngStyle]="{'background-image':this.getIcon('back')}">
     </div>
   </div>
 
   <!-- the button used to clear the whole sentence entered by the user -->
-  <div class="button floatLeft" (click)="this.clear()">
+  <div class="button floatLeft" (click)="this.clear()"
+       matTooltip="Efface la phrase entrée dans la barre"
+       [matTooltipDisabled]="!this.userToolBarService.help">
     <div class="image haveBackgroundImage" [ngStyle]="{'background-image':this.getIcon('clear')}" >
     </div>
   </div>

@@ -33,6 +33,8 @@ import {AVenirComponent} from './components/a-venir/a-venir.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ErrorOnEditComponent } from './components/error-on-edit/error-on-edit.component';
 import { PrintComponent } from './components/print/print.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {OverlayModule} from "@angular/cdk/overlay";
 
 @NgModule({
   declarations: [
@@ -61,17 +63,19 @@ import { PrintComponent } from './components/print/print.component';
     ErrorOnEditComponent,
     PrintComponent
   ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        Ng2ImgMaxModule,
-        HttpClientModule,
-        ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
-        AppRoutingModule,
-        DragulaModule,
-        DragulaModule.forRoot(),
-        BrowserAnimationsModule
-    ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    Ng2ImgMaxModule,
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
+    AppRoutingModule,
+    DragulaModule,
+    DragulaModule.forRoot(),
+    BrowserAnimationsModule,
+    MatTooltipModule,
+    OverlayModule
+  ],
   bootstrap: [AppComponent]
 })
 

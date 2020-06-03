@@ -1,3 +1,10 @@
+@import '~@angular/cdk/overlay-prebuilt.css';
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.mat-tooltip {
+  background-color: #292929;
+}
+
 * {
   box-sizing: border-box;
   word-wrap: break-word;
