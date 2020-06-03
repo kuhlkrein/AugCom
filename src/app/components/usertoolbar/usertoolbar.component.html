@@ -45,6 +45,13 @@
     </div>
   </div>
 
+  <div class="button floatRight" id="questionHelpButton" *ngIf="this.userToolBarService.unlock"
+       (click)="this.userToolBarService.fullScreen()">
+    <div class="image width-100"
+         [ngStyle]="{'background-image':this.getIcon('question')}">
+    </div>
+  </div>
+
 
   <div class="button floatLeft" id="backButton"
        (click)="this.boardService.backToPreviousFolder()"
