@@ -1,15 +1,15 @@
 .topBackBar {
-  height: 50px;
+  height: 1.5cm;
   width: 100%;
   background-color: dimgray;
 }
 
 .topBarBackIcon {
   display: inline-block;
-  margin-top: 7px;
-  margin-left: 7px;
-  height: 32px;
-  width: 32px;
+  margin-top: 0.25cm;
+  margin-left: 0.25cm;
+  height: 1cm;
+  width: 1cm;
   fill: white;
   padding: 5px;
   border-radius: 8px;
@@ -27,7 +27,7 @@
 .topBarLabel {
   display: inline-block;
   padding-left: 10px;
-  padding-top: 15px;
+  padding-top: 20px;
   font-weight: 600;
   color: white;
 }
@@ -37,4 +37,49 @@
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+}
+
+
+ .button .image:hover {
+  background-color: darkgrey;
+}
+
+ .button .image {
+  height: 80%;
+  width: 80%;
+  margin-left: 10%;
+  transform: translateY(10%);
+  background-color: lightgrey;
+  border-radius: 10px;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  visibility: visible;
+}
+
+ .button {
+  cursor: pointer;
+  height: 1.5cm;
+  width: 1.5cm;
+  max-height: 14vw;
+  max-width: 14vw;
+  min-width: 1cm;
+  min-height: 1cm;
+  visibility: hidden;
+}
+ .button .helpActivated:hover {
+  background-color: goldenrod;
+}
+
+ .button .helpActivated {
+  height: 80%;
+  width: 80%;
+  margin-left: 10%;
+  transform: translateY(10%);
+  background-color: palegoldenrod;
+  border-radius: 25%;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  visibility: visible;
 }

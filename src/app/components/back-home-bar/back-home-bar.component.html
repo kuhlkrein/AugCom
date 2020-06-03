@@ -13,4 +13,14 @@
             text-anchor="middle">Title</text>
     </svg>
   </div>
+
+  <div class="button floatRight" id="questionHelpButton"
+       matTooltip="Active ou désactive l'aide"
+       [matTooltipDisabled]="!this.userToolBarService.help"
+       (click)="this.userToolBarService.help = !this.userToolBarService.help">
+    <div class="image width-100" [class.helpActivated]="this.userToolBarService.help"
+         [ngStyle]="{'background-image':this.getIcon('question')}">
+    </div>
+  </div>
+
 </div>
