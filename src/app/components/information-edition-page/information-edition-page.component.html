@@ -8,17 +8,27 @@
         <label class="label" for="namefield">Nom de l'élément: </label>
         <input id="namefield" [(ngModel)]="this.editionService.name" class="input width-100"
                placeholder="Entrez le nom de l'élément"
-               type="text">
+               type="text"
+               matTooltip="Permet de modifier le nom de l'élément"
+               [matTooltipDisabled]="!this.userToolBarService.help">
 
         <label class="label" for="typefield">Type d'élément : </label>
         <form id="typefield" class="input width-100">
           <input [(ngModel)]="this.editionService.radioTypeFormat" checked id="radioButton" name="typeFormat"
                  type="radio"
-                 value="button">
-          <label class="radio" for="radioButton">Bouton</label>
+                 value="button"
+                 matTooltip="Cochez cette case pour que l'élément soit un bouton normal "
+                 [matTooltipDisabled]="!this.userToolBarService.help">
+          <label class="radio" for="radioButton"
+                 matTooltip="Cochez cette case pour que l'élément soit un bouton normal "
+                 [matTooltipDisabled]="!this.userToolBarService.help">Bouton</label>
           <input [(ngModel)]="this.editionService.radioTypeFormat" id="radioFolder" name="typeFormat" type="radio"
-                 value="folder">
-          <label class="radio" for="radioFolder">Dossier</label>
+                 value="folder"
+                 matTooltip="Cochez cette case pour qu'un click sur l'élément ouvre une nouvelle page "
+                 [matTooltipDisabled]="!this.userToolBarService.help">
+          <label class="radio" for="radioFolder"
+                 matTooltip="Cochez cette case pour qu'un click sur l'élément ouvre une nouvelle page "
+                 [matTooltipDisabled]="!this.userToolBarService.help">Dossier</label>
         </form>
       </div>
     </div>

@@ -212,3 +212,7 @@
   opacity: 0;
   transition: width 5s;
 }
+
+::ng-deep .test {
+  white-space: pre-line;
+}

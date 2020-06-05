@@ -83,3 +83,7 @@
   background-position: center;
   visibility: visible;
 }
+
+::ng-deep .test {
+  white-space: pre-line;
+}

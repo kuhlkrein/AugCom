@@ -9,7 +9,9 @@
     'box-sizing': 'border-box',
      'border-width': '3px',
      'border-style': 'solid',
-     'border-color': this.editionService.curentBorderColor}">
+     'border-color': this.editionService.curentBorderColor}"
+           matTooltip="Ceci est une prévisualisation du bouton que vous modifiez"
+           [matTooltipDisabled]="!this.userToolBarService.help">
         <div class="image haveBackgroundImage"
              [style.background-image]="this.sanitizer.bypassSecurityTrustStyle('url(' +this.editionService.imageURL+')')">
 
@@ -28,7 +30,9 @@
             <div>
               <div class="menu-item-title-container"
                    [class.selected]="this.editionService.currentEditPage===menus"
-                   (click)="this.selectMenu(menus)">
+                   (click)="this.selectMenu(menus)"
+                   matTooltip="Ouvre le menu {{menus}}"
+                   [matTooltipDisabled]="!this.userToolBarService.help">
                 <div>
                   {{menus}}
                 </div>

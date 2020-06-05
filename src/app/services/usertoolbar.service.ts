@@ -40,6 +40,8 @@ export class UsertoolbarService {
 
   public title = 'Title';
 
+  public helpInfo = "Active ou désactive l'aide \n survolez un élément pour obtenir des informations"
+
   fullScreen() {
     if (document.fullscreen || (document as any).webkitIsFullScreen || (document as any).mozFullScreen) {
       if (document.exitFullscreen) {
